@@ -239,6 +239,144 @@
     .ob-footer{padding:0 18px 20px;}
     .ob-hdr{padding:18px 18px 14px;}
   }
+
+  /* ── PROFILE PANEL ─────────────────────────────────────────── */
+  .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.8);z-index:5000;display:flex;align-items:flex-start;justify-content:center;padding:24px 16px;overflow-y:auto;backdrop-filter:blur(4px);}
+  .modal-overlay.hidden{display:none;}
+  .modal-card{position:relative;z-index:1;width:100%;max-width:600px;background:#13151a;border:1px solid #222530;border-radius:24px;overflow:hidden;box-shadow:0 40px 80px rgba(0,0,0,0.8);margin:auto;}
+  .modal-hdr{padding:22px 28px 18px;border-bottom:1px solid #1e2130;display:flex;align-items:center;justify-content:space-between;}
+  .modal-title{font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:1px;color:var(--text);}
+  .modal-title span{color:var(--accent);}
+  .modal-close{background:none;border:none;color:var(--muted);font-size:22px;cursor:pointer;padding:4px 8px;transition:color .2s;}
+  .modal-close:hover{color:var(--text);}
+  .modal-body{padding:24px 28px;}
+  .modal-tabs{display:flex;gap:0;border-bottom:1px solid #1e2130;margin:-24px -28px 24px;}
+  .modal-tab{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);background:none;border:none;border-bottom:2px solid transparent;padding:16px 20px;cursor:pointer;transition:all .2s;white-space:nowrap;}
+  .modal-tab.active{color:var(--accent);border-bottom-color:var(--accent);}
+  .modal-tab-content{display:none;}
+  .modal-tab-content.active{display:block;}
+
+  /* profile summary */
+  .profile-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px;}
+  .profile-item{background:#0f1115;border:1px solid #1e2130;border-radius:12px;padding:14px 16px;}
+  .profile-item-label{font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);letter-spacing:2px;text-transform:uppercase;margin-bottom:6px;}
+  .profile-item-value{font-size:14px;font-weight:600;color:var(--text);}
+  .profile-item-value.accent{color:var(--accent);}
+
+  /* edit fields */
+  .edit-section{margin-bottom:24px;}
+  .edit-section-title{font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid #1e2130;}
+  .edit-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  .edit-field{margin-bottom:0;}
+  .edit-label{display:block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#6b7280;margin-bottom:6px;font-family:'DM Mono',monospace;}
+  .edit-input{width:100%;background:#0a0a0e;border:1px solid #1e2130;border-radius:10px;padding:10px 14px;color:#f0f1f5;font-size:13px;outline:none;font-family:'DM Sans',sans-serif;transition:border-color .2s;box-sizing:border-box;}
+  .edit-input:focus{border-color:var(--accent);}
+
+  /* goal switcher */
+  .goal-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:20px;}
+  .goal-opt{padding:12px 14px;border-radius:12px;font-size:13px;font-weight:500;border:1px solid #1e2130;background:#0f1115;color:var(--muted);cursor:pointer;transition:all .15s;text-align:left;font-family:'DM Sans',sans-serif;}
+  .goal-opt.active{border-color:rgba(232,255,71,.5);background:rgba(232,255,71,.08);color:var(--accent);}
+
+  /* regen button */
+  .regen-btn{width:100%;padding:14px;background:linear-gradient(135deg,#e8ff47,#ff6b35);border:none;border-radius:14px;font-weight:800;color:#0a0a0a;font-size:15px;cursor:pointer;font-family:'DM Sans',sans-serif;margin-top:8px;}
+  .regen-btn:disabled{opacity:.3;cursor:not-allowed;}
+  .regen-status{text-align:center;font-size:13px;color:var(--muted);margin-top:12px;min-height:20px;}
+  .save-btn{width:100%;padding:14px;background:#1e2130;border:1px solid #2e3140;border-radius:14px;font-weight:700;color:var(--text);font-size:14px;cursor:pointer;font-family:'DM Sans',sans-serif;margin-top:8px;transition:all .2s;}
+  .save-btn:hover{border-color:var(--accent);color:var(--accent);}
+  .danger-btn{width:100%;padding:14px;background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.2);border-radius:14px;font-weight:700;color:#f87171;font-size:14px;cursor:pointer;font-family:'DM Sans',sans-serif;margin-top:8px;}
+
+  /* ── TRACKER ───────────────────────────────────────────────── */
+  .tracker-tabs{display:flex;gap:8px;margin-bottom:24px;flex-wrap:wrap;}
+  .tracker-tab{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);background:var(--card);border:1px solid var(--border);border-radius:8px;padding:8px 14px;cursor:pointer;transition:all .2s;}
+  .tracker-tab.active{color:var(--accent);border-color:rgba(232,255,71,.3);background:rgba(232,255,71,.05);}
+  .tracker-panel{display:none;}
+  .tracker-panel.active{display:block;}
+
+  /* lift tracker */
+  .lift-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px;margin-bottom:16px;}
+  .lift-card-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;}
+  .lift-card-name{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:.5px;}
+  .lift-targets{display:flex;gap:20px;}
+  .lift-target-item{text-align:center;}
+  .lift-target-label{font-family:'DM Mono',monospace;font-size:9px;color:var(--muted);letter-spacing:2px;text-transform:uppercase;display:block;margin-bottom:3px;}
+  .lift-target-val{font-family:'Bebas Neue',sans-serif;font-size:24px;color:var(--accent);}
+  .lift-log-form{display:grid;grid-template-columns:1fr 1fr auto;gap:8px;align-items:end;margin-bottom:12px;}
+  .lift-input{background:#0f1115;border:1px solid #1e2130;border-radius:10px;padding:10px 12px;color:var(--text);font-size:13px;outline:none;font-family:'DM Sans',sans-serif;transition:border-color .2s;width:100%;}
+  .lift-input:focus{border-color:var(--accent);}
+  .lift-log-btn{background:var(--accent);color:#0a0a0a;border:none;border-radius:10px;padding:10px 16px;font-weight:700;font-size:13px;cursor:pointer;font-family:'DM Sans',sans-serif;white-space:nowrap;}
+  .lift-history{display:flex;flex-direction:column;gap:6px;max-height:200px;overflow-y:auto;}
+  .lift-entry{display:flex;align-items:center;justify-content:space-between;background:#0f1115;border-radius:8px;padding:8px 12px;font-size:13px;}
+  .lift-entry-date{color:var(--muted);font-family:'DM Mono',monospace;font-size:11px;}
+  .lift-entry-val{font-weight:700;color:var(--text);}
+  .lift-entry-val.pr{color:var(--accent);}
+  .lift-entry-note{color:var(--muted);font-size:12px;flex:1;margin:0 10px;text-align:right;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .lift-del{background:none;border:none;color:#3d4058;cursor:pointer;font-size:14px;padding:0 4px;transition:color .2s;}
+  .lift-del:hover{color:#f87171;}
+  .lift-progress{height:6px;background:#1e2130;border-radius:99px;overflow:hidden;margin-top:10px;}
+  .lift-progress-fill{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--accent),var(--accent2));transition:width .6s ease;}
+  .lift-progress-label{display:flex;justify-content:space-between;font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);margin-top:5px;}
+
+  /* session log */
+  .session-form{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px;margin-bottom:20px;}
+  .session-form-title{font-family:'Bebas Neue',sans-serif;font-size:20px;margin-bottom:14px;color:var(--accent);}
+  .session-form-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px;}
+  .session-textarea{width:100%;background:#0f1115;border:1px solid #1e2130;border-radius:10px;padding:10px 12px;color:var(--text);font-size:13px;outline:none;font-family:'DM Sans',sans-serif;resize:none;box-sizing:border-box;}
+  .session-textarea:focus{border-color:var(--accent);}
+  .session-log-btn{width:100%;padding:12px;background:var(--accent);color:#0a0a0a;border:none;border-radius:10px;font-weight:700;font-size:14px;cursor:pointer;font-family:'DM Sans',sans-serif;margin-top:8px;}
+  .session-entry{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:10px;}
+  .session-entry-hdr{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;}
+  .session-entry-title{font-weight:600;font-size:14px;}
+  .session-entry-date{font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);}
+  .session-entry-meta{display:flex;gap:10px;margin-bottom:6px;}
+  .session-badge{font-family:'DM Mono',monospace;font-size:10px;padding:3px 8px;border-radius:6px;letter-spacing:1px;text-transform:uppercase;}
+  .badge-feeling-great{background:rgba(74,222,128,.1);color:var(--success);border:1px solid rgba(74,222,128,.2);}
+  .badge-feeling-good{background:rgba(232,255,71,.1);color:var(--accent);border:1px solid rgba(232,255,71,.2);}
+  .badge-feeling-ok{background:rgba(250,204,21,.1);color:var(--warn);border:1px solid rgba(250,204,21,.2);}
+  .badge-feeling-tough{background:rgba(255,107,53,.1);color:var(--accent2);border:1px solid rgba(255,107,53,.2);}
+  .session-entry-notes{font-size:13px;color:#9ca3af;line-height:1.6;}
+  .session-del{background:none;border:none;color:#3d4058;cursor:pointer;font-size:14px;transition:color .2s;}
+  .session-del:hover{color:#f87171;}
+
+  /* body weight */
+  .weight-form{display:grid;grid-template-columns:1fr 1fr auto;gap:8px;align-items:end;margin-bottom:20px;}
+  .weight-chart{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px;margin-bottom:16px;}
+  .weight-chart-title{font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--accent);margin-bottom:16px;}
+  .weight-bars{display:flex;align-items:flex-end;gap:4px;height:120px;}
+  .weight-bar-wrap{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;}
+  .weight-bar{width:100%;background:linear-gradient(180deg,var(--accent),var(--accent2));border-radius:4px 4px 0 0;min-height:4px;transition:height .4s ease;}
+  .weight-bar-label{font-family:'DM Mono',monospace;font-size:9px;color:var(--muted);text-align:center;}
+  .weight-bar-val{font-family:'DM Mono',monospace;font-size:10px;color:var(--text);font-weight:500;}
+  .weight-history{display:flex;flex-direction:column;gap:6px;max-height:200px;overflow-y:auto;}
+  .weight-entry{display:flex;align-items:center;justify-content:space-between;background:#0f1115;border-radius:8px;padding:8px 12px;}
+  .weight-entry-date{color:var(--muted);font-family:'DM Mono',monospace;font-size:11px;}
+  .weight-entry-val{font-weight:700;font-family:'DM Mono',monospace;font-size:14px;color:var(--text);}
+  .weight-delta{font-size:11px;font-family:'DM Mono',monospace;}
+  .weight-delta.up{color:#f87171;}
+  .weight-delta.down{color:var(--success);}
+
+  /* run tracker */
+  .run-entry-form{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px;margin-bottom:20px;}
+  .run-history-item{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px 16px;margin-bottom:8px;display:flex;align-items:center;justify-content:space-between;gap:12px;}
+  .run-meta{display:flex;flex-direction:column;gap:2px;}
+  .run-type{font-size:13px;font-weight:600;}
+  .run-date{font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);}
+  .run-stats{display:flex;gap:16px;}
+  .run-stat{text-align:right;}
+  .run-stat-val{font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--accent);}
+  .run-stat-label{font-family:'DM Mono',monospace;font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;}
+
+  /* profile btn in header */
+  .profile-btn{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);background:var(--card);border:1px solid var(--border);border-radius:8px;padding:8px 14px;cursor:pointer;transition:all .2s;white-space:nowrap;}
+  .profile-btn:hover{color:var(--accent);border-color:rgba(232,255,71,.3);}
+
+  /* regen overlay */
+  .regen-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.9);z-index:8000;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;}
+  .regen-overlay.hidden{display:none;}
+  .regen-spinner{width:56px;height:56px;position:relative;}
+  .regen-ring{position:absolute;inset:0;border-radius:50%;border:2px solid #1e2130;}
+  .regen-arc{position:absolute;inset:0;border-radius:50%;border:2px solid transparent;border-top-color:var(--accent);animation:spin .9s linear infinite;}
+  .regen-text{color:var(--text);font-weight:700;font-size:16px;}
+  .regen-sub{color:var(--muted);font-size:13px;}
 </style>
 </head>
 <body>
@@ -508,7 +646,7 @@
       <div class="welcome-name" id="welcome-name"></div>
       <div class="welcome-sub" id="welcome-sub"></div>
     </div>
-    <button class="reset-btn" onclick="resetProfile()">Reset &amp; Start Over</button>
+    <div style="display:flex;gap:8px;flex-shrink:0"><button class="profile-btn" onclick="openProfile()">⚙ Profile</button><button class="reset-btn" onclick="resetProfile()">Reset</button></div>
   </div>
   <nav>
     <button class="nav-btn active" onclick="showSection('overview')">Overview</button>
@@ -520,6 +658,7 @@
     <button class="nav-btn" onclick="showSection('targets')">Targets</button>
     <button class="nav-btn" onclick="showSection('evidence')">Evidence</button>
     <button class="nav-btn" onclick="showSection('backcare')">Back Care</button>
+    <button class="nav-btn" onclick="showSection('tracker')">Tracker</button>
   </nav>
   <main>
     <div id="overview" class="section active"></div>
@@ -531,8 +670,92 @@
     <div id="targets"  class="section"></div>
     <div id="evidence" class="section"></div>
     <div id="backcare" class="section"></div>
+    <div id="tracker" class="section"></div>
   </main>
   <button class="fab" id="fab" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<!-- PROFILE MODAL -->
+<div class="modal-overlay hidden" id="profile-modal">
+  <div class="modal-card">
+    <div class="modal-hdr">
+      <div class="modal-title">Your <span>Profile</span></div>
+      <button class="modal-close" onclick="closeProfile()">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-tabs">
+        <button class="modal-tab active" onclick="switchModalTab('summary',this)">Summary</button>
+        <button class="modal-tab" onclick="switchModalTab('edit',this)">Edit Fields</button>
+        <button class="modal-tab" onclick="switchModalTab('goal',this)">Switch Goal</button>
+        <button class="modal-tab" onclick="switchModalTab('redo',this)">Redo Assessment</button>
+      </div>
+      <!-- SUMMARY -->
+      <div class="modal-tab-content active" id="modal-summary">
+        <div class="profile-grid" id="profile-summary-grid"></div>
+      </div>
+      <!-- EDIT -->
+      <div class="modal-tab-content" id="modal-edit">
+        <div class="edit-section">
+          <div class="edit-section-title">Personal</div>
+          <div class="edit-grid">
+            <div><label class="edit-label">Name</label><input class="edit-input" id="edit-name"></div>
+            <div><label class="edit-label">Age</label><input class="edit-input" type="number" id="edit-age"></div>
+            <div><label class="edit-label">Weight</label><input class="edit-input" id="edit-weight" placeholder="e.g. 80kg"></div>
+            <div><label class="edit-label">Height</label><input class="edit-input" id="edit-height" placeholder="e.g. 178cm"></div>
+          </div>
+        </div>
+        <div class="edit-section">
+          <div class="edit-section-title">Benchmarks</div>
+          <div class="edit-grid">
+            <div><label class="edit-label">Squat 1RM</label><input class="edit-input" id="edit-squat"></div>
+            <div><label class="edit-label">Deadlift 1RM</label><input class="edit-input" id="edit-deadlift"></div>
+            <div><label class="edit-label">Bench 1RM</label><input class="edit-input" id="edit-bench"></div>
+            <div><label class="edit-label">OHP 1RM</label><input class="edit-input" id="edit-ohp"></div>
+            <div><label class="edit-label">5K Time</label><input class="edit-input" id="edit-5k"></div>
+            <div><label class="edit-label">10K Time</label><input class="edit-input" id="edit-10k"></div>
+            <div><label class="edit-label">FTP</label><input class="edit-input" id="edit-ftp"></div>
+          </div>
+        </div>
+        <div class="edit-section">
+          <div class="edit-section-title">Injuries / Notes</div>
+          <textarea class="edit-input" id="edit-injuries" rows="3" style="resize:none;width:100%"></textarea>
+        </div>
+        <button class="save-btn" onclick="saveEdits()">Save Changes</button>
+        <div id="edit-status" style="text-align:center;font-size:13px;color:var(--success);margin-top:10px;min-height:18px"></div>
+      </div>
+      <!-- SWITCH GOAL -->
+      <div class="modal-tab-content" id="modal-goal">
+        <p style="font-size:13px;color:var(--muted);margin-bottom:16px">Select a new primary goal — Claude will regenerate your programme around it.</p>
+        <div class="goal-grid" id="goal-grid">
+          <button class="goal-opt" onclick="selectGoal(this)">Increase strength (3RM / 1RM)</button>
+          <button class="goal-opt" onclick="selectGoal(this)">Build muscle &amp; size</button>
+          <button class="goal-opt" onclick="selectGoal(this)">Improve running performance</button>
+          <button class="goal-opt" onclick="selectGoal(this)">Hybrid performance (strength + cardio)</button>
+          <button class="goal-opt" onclick="selectGoal(this)">Lose body fat</button>
+          <button class="goal-opt" onclick="selectGoal(this)">Athletic performance &amp; power</button>
+          <button class="goal-opt" onclick="selectGoal(this)">General fitness &amp; health</button>
+        </div>
+        <button class="regen-btn" id="goal-regen-btn" onclick="regenWithNewGoal()" disabled>Regenerate Programme ⚡</button>
+        <div class="regen-status" id="goal-regen-status"></div>
+      </div>
+      <!-- REDO -->
+      <div class="modal-tab-content" id="modal-redo">
+        <p style="font-size:14px;color:var(--text);margin-bottom:8px;font-weight:600">Start fresh with a new assessment</p>
+        <p style="font-size:13px;color:var(--muted);margin-bottom:20px;line-height:1.6">This will clear your current programme and take you back through the full questionnaire. Your tracker data will be preserved.</p>
+        <button class="regen-btn" onclick="redoAssessment()">Start New Assessment →</button>
+        <div style="height:16px"></div>
+        <button class="danger-btn" onclick="resetProfile()">⚠ Reset Everything (clears all data)</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- REGEN OVERLAY -->
+<div class="regen-overlay hidden" id="regen-overlay">
+  <div class="regen-spinner"><div class="regen-ring"></div><div class="regen-arc"></div></div>
+  <div class="regen-text" id="regen-overlay-text">Regenerating your programme…</div>
+  <div class="regen-sub" id="regen-overlay-sub">This takes about 30 seconds</div>
+</div>
+
 </div>
 
 <script>
@@ -782,6 +1005,7 @@ function completeOnboarding(){
   document.getElementById('onboarding').classList.add('hidden');
   document.getElementById('app').classList.add('visible');
   renderApp();
+  renderTracker();
   window.scrollTo({top:0});
 }
 function resetProfile(){
@@ -877,11 +1101,507 @@ function showSection(id){document.querySelectorAll('.section').forEach(s=>s.clas
 function toggleAccordion(h){h.parentElement.classList.toggle('open');}
 window.addEventListener('scroll',()=>{document.getElementById('fab').classList.toggle('visible',window.scrollY>300);});
 
+
+
+// ════════════════════════════════════════════════════════════════
+// PROFILE PANEL
+// ════════════════════════════════════════════════════════════════
+function openProfile(){
+  populateProfileSummary();
+  populateEditFields();
+  highlightCurrentGoal();
+  document.getElementById('profile-modal').classList.remove('hidden');
+}
+function closeProfile(){ document.getElementById('profile-modal').classList.add('hidden'); }
+function switchModalTab(tab, btn){
+  document.querySelectorAll('.modal-tab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.modal-tab-content').forEach(t=>t.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('modal-'+tab).classList.add('active');
+}
+
+function populateProfileSummary(){
+  const p=profile;
+  const items=[
+    {label:'Name', val: p.name||'—'},
+    {label:'Age', val: p.age||'—'},
+    {label:'Weight', val: p.weight?(p.weight+p.weightUnit):'—'},
+    {label:'Height', val: p.height?(p.height+p.heightUnit):'—'},
+    {label:'Experience', val: p.exp||'—'},
+    {label:'Training Days', val: p.days?(p.days+'/week'):'—'},
+    {label:'Primary Goal', val: p.goal||'—', accent:true},
+    {label:'Sleep', val: p.sleep?(p.sleep+' hrs'):'—'},
+    {label:'Squat 1RM', val: p.squat||'Not set'},
+    {label:'Deadlift 1RM', val: p.deadlift||'Not set'},
+    {label:'Bench 1RM', val: p.bench||'Not set'},
+    {label:'5K Time', val: p.run5k||'Not set'},
+    {label:'FTP', val: p.ftp||'Not set'},
+    {label:'Injuries', val: p.injuries||'None noted'},
+  ];
+  document.getElementById('profile-summary-grid').innerHTML = items.map(i=>
+    `<div class="profile-item">
+      <div class="profile-item-label">${i.label}</div>
+      <div class="profile-item-value${i.accent?' accent':''}">${x(i.val)}</div>
+    </div>`
+  ).join('');
+}
+
+function populateEditFields(){
+  const p=profile;
+  const map={name:'name',age:'age',weight:'weight',height:'height',squat:'squat',deadlift:'deadlift',bench:'bench',ohp:'ohp','5k':'run5k','10k':'run10k',ftp:'ftp',injuries:'injuries'};
+  Object.entries(map).forEach(([id,key])=>{
+    const el=document.getElementById('edit-'+id);
+    if(el) el.value=p[key]||'';
+  });
+}
+
+function saveEdits(){
+  const map={name:'name',age:'age',weight:'weight',height:'height',squat:'squat',deadlift:'deadlift',bench:'bench',ohp:'ohp','5k':'run5k','10k':'run10k',ftp:'ftp',injuries:'injuries'};
+  Object.entries(map).forEach(([id,key])=>{
+    const el=document.getElementById('edit-'+id);
+    if(el) profile[key]=el.value.trim();
+  });
+  try{localStorage.setItem(SK,JSON.stringify(profile));}catch(e){}
+  // Update header
+  if(profile.name) document.getElementById('app-title').innerHTML=`${x(profile.name)}'s<br><span>Performance</span><br>Programme`;
+  document.getElementById('welcome-name').textContent=`Welcome, ${profile.name} 👋`;
+  populateProfileSummary();
+  document.getElementById('edit-status').textContent='✓ Changes saved';
+  setTimeout(()=>{ document.getElementById('edit-status').textContent=''; },2500);
+}
+
+let selectedNewGoal='';
+function highlightCurrentGoal(){
+  selectedNewGoal='';
+  document.getElementById('goal-regen-btn').disabled=true;
+  document.querySelectorAll('.goal-opt').forEach(b=>{
+    b.classList.toggle('active', b.textContent.trim()===profile.goal);
+  });
+}
+function selectGoal(btn){
+  document.querySelectorAll('.goal-opt').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  selectedNewGoal=btn.textContent.trim();
+  document.getElementById('goal-regen-btn').disabled=(selectedNewGoal===profile.goal);
+}
+
+async function regenWithNewGoal(){
+  if(!selectedNewGoal) return;
+  profile.goal=selectedNewGoal;
+  closeProfile();
+  await triggerRegen('Regenerating for new goal…');
+}
+
+function redoAssessment(){
+  closeProfile();
+  // Clear programme but keep tracker data
+  programme=null;
+  try{
+    localStorage.removeItem(SK);
+    localStorage.removeItem(SK2);
+  }catch(e){}
+  document.getElementById('app').classList.remove('visible');
+  document.getElementById('onboarding').classList.remove('hidden');
+  cur=0;
+  obShowStep(0);
+}
+
+async function triggerRegen(msg){
+  const ov=document.getElementById('regen-overlay');
+  document.getElementById('regen-overlay-text').textContent=msg||'Regenerating your programme…';
+  ov.classList.remove('hidden');
+  try{
+    const res=await fetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:8000,messages:[{role:'user',content:buildPrompt()}]})});
+    const data=await res.json();
+    const raw=(data.content||[]).map(b=>b.text||'').join('');
+    if(!raw) throw new Error('Empty response');
+    if(raw.startsWith('{')){ try{ const maybe=JSON.parse(raw); if(maybe.error) throw new Error(maybe.error); }catch(e){ if(e.message!=='Unexpected token') throw e; } }
+    const m=raw.match(/```json\s*([\s\S]*?)```/)||raw.match(/(\{[\s\S]*\})/);
+    if(!m) throw new Error('Could not parse programme');
+    programme=JSON.parse(m[1]);
+    try{localStorage.setItem(SK,JSON.stringify(profile));localStorage.setItem(SK2,JSON.stringify(programme));}catch(e){}
+    ov.classList.add('hidden');
+    renderApp();
+    showSection('overview');
+  }catch(e){
+    ov.classList.add('hidden');
+    alert('Regeneration failed: '+e.message);
+  }
+}
+
+// Close modal on overlay click
+document.getElementById('profile-modal').addEventListener('click',function(e){
+  if(e.target===this) closeProfile();
+});
+
+// ════════════════════════════════════════════════════════════════
+// TRACKER
+// ════════════════════════════════════════════════════════════════
+const TK='apex_tracker_v1';
+let tracker={lifts:{},sessions:[],weights:[],runs:[]};
+
+function loadTracker(){
+  try{
+    const saved=localStorage.getItem(TK);
+    if(saved) tracker=JSON.parse(saved);
+  }catch(e){}
+}
+
+function saveTracker(){
+  try{ localStorage.setItem(TK,JSON.stringify(tracker)); }catch(e){}
+}
+
+const LIFTS=[
+  {key:'squat', name:'Squat', profileKey:'squat'},
+  {key:'deadlift', name:'Deadlift', profileKey:'deadlift'},
+  {key:'bench', name:'Bench Press', profileKey:'bench'},
+  {key:'ohp', name:'Overhead Press', profileKey:'ohp'},
+];
+
+function renderTracker(){
+  const el=document.getElementById('tracker');
+  if(!el) return;
+
+  // Get targets from programme if available
+  const targets=extractTargetsFromProgramme();
+
+  el.innerHTML=`
+    <div class="section-title">Performance<br><span style="color:var(--accent)">Tracker</span></div>
+    <div class="section-sub">Log your lifts, sessions, weight and runs — track your progress over 12 weeks</div>
+
+    <div class="tracker-tabs">
+      <button class="tracker-tab active" onclick="switchTrackerTab('lifts',this)">💪 Lifts</button>
+      <button class="tracker-tab" onclick="switchTrackerTab('sessions',this)">📋 Sessions</button>
+      <button class="tracker-tab" onclick="switchTrackerTab('bodyweight',this)">⚖️ Body Weight</button>
+      <button class="tracker-tab" onclick="switchTrackerTab('running',this)">🏃 Running</button>
+    </div>
+
+    <div class="tracker-panel active" id="tp-lifts">${renderLiftsPanel(targets)}</div>
+    <div class="tracker-panel" id="tp-sessions">${renderSessionsPanel()}</div>
+    <div class="tracker-panel" id="tp-bodyweight">${renderWeightPanel()}</div>
+    <div class="tracker-panel" id="tp-running">${renderRunsPanel()}</div>
+  `;
+}
+
+function switchTrackerTab(tab,btn){
+  document.querySelectorAll('.tracker-tab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.tracker-panel').forEach(t=>t.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('tp-'+tab).classList.add('active');
+}
+
+function extractTargetsFromProgramme(){
+  const targets={};
+  if(!programme||!programme.targets) return targets;
+  (programme.targets.cards||[]).forEach(card=>{
+    (card.rows||[]).forEach(row=>{
+      const n=row.name.toLowerCase();
+      if(n.includes('squat')) targets.squat=row.goal;
+      if(n.includes('deadlift')) targets.deadlift=row.goal;
+      if(n.includes('bench')) targets.bench=row.goal;
+      if(n.includes('overhead')||n.includes('ohp')) targets.ohp=row.goal;
+      if(n.includes('5k')) targets.run5k=row.goal;
+      if(n.includes('10k')) targets.run10k=row.goal;
+    });
+  });
+  return targets;
+}
+
+function renderLiftsPanel(targets){
+  return LIFTS.map(lift=>{
+    const history=(tracker.lifts[lift.key]||[]).slice().reverse();
+    const best=history.length?Math.max(...history.map(e=>parseFloat(e.val)||0)):0;
+    const baseline=parseFloat(profile[lift.profileKey])||0;
+    const target=targets[lift.key]||'—';
+    // Parse target number for progress bar
+    const targetNum=parseFloat((target||'').replace(/[^0-9.]/g,''))||0;
+    const pct=targetNum&&best?Math.min(100,Math.round(best/targetNum*100)):0;
+
+    return `<div class="lift-card">
+      <div class="lift-card-hdr">
+        <div class="lift-card-name">${lift.name}</div>
+        <div class="lift-targets">
+          <div class="lift-target-item">
+            <span class="lift-target-label">Baseline</span>
+            <div class="lift-target-val" style="color:var(--muted);font-size:18px">${baseline||'—'}</div>
+          </div>
+          <div class="lift-target-item">
+            <span class="lift-target-label">Best</span>
+            <div class="lift-target-val" style="color:var(--accent3)">${best||'—'}</div>
+          </div>
+          <div class="lift-target-item">
+            <span class="lift-target-label">Target</span>
+            <div class="lift-target-val">${x(target)}</div>
+          </div>
+        </div>
+      </div>
+      ${targetNum?`<div class="lift-progress"><div class="lift-progress-fill" style="width:${pct}%"></div></div>
+      <div class="lift-progress-label"><span>Baseline</span><span>${pct}% to target</span><span>${x(target)}</span></div>`:''}
+      <div style="margin-top:14px">
+        <div class="lift-log-form">
+          <div>
+            <div style="font-size:11px;color:var(--muted);margin-bottom:4px;font-family:'DM Mono',monospace;text-transform:uppercase;letter-spacing:1px">Weight (kg)</div>
+            <input class="lift-input" type="number" id="lift-val-${lift.key}" placeholder="e.g. 125">
+          </div>
+          <div>
+            <div style="font-size:11px;color:var(--muted);margin-bottom:4px;font-family:'DM Mono',monospace;text-transform:uppercase;letter-spacing:1px">Note (optional)</div>
+            <input class="lift-input" id="lift-note-${lift.key}" placeholder="e.g. 3RM, felt strong">
+          </div>
+          <button class="lift-log-btn" onclick="logLift('${lift.key}')">Log</button>
+        </div>
+        ${history.length?`<div class="lift-history">${history.slice(0,10).map((e,i)=>`
+          <div class="lift-entry">
+            <span class="lift-entry-date">${e.date}</span>
+            <span class="lift-entry-val${i===0&&e.val===String(best)?' pr':''}">${e.val}kg${i===0&&e.val===String(best)?'  🏆':''}</span>
+            <span class="lift-entry-note">${x(e.note||'')}</span>
+            <button class="lift-del" onclick="deleteLift('${lift.key}',${tracker.lifts[lift.key].length-1-i})">✕</button>
+          </div>`).join('')}</div>`:'<div style="color:var(--muted);font-size:13px;padding:8px 0;text-align:center">No entries yet — log your first lift above</div>'}
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function logLift(key){
+  const val=document.getElementById('lift-val-'+key).value.trim();
+  const note=document.getElementById('lift-note-'+key).value.trim();
+  if(!val) return;
+  if(!tracker.lifts[key]) tracker.lifts[key]=[];
+  tracker.lifts[key].push({val,note,date:new Date().toLocaleDateString('en-AU',{day:'numeric',month:'short'})});
+  saveTracker();
+  document.getElementById('lift-val-'+key).value='';
+  document.getElementById('lift-note-'+key).value='';
+  const targets=extractTargetsFromProgramme();
+  document.getElementById('tp-lifts').innerHTML=renderLiftsPanel(targets);
+}
+
+function deleteLift(key,idx){
+  if(!tracker.lifts[key]) return;
+  tracker.lifts[key].splice(idx,1);
+  saveTracker();
+  const targets=extractTargetsFromProgramme();
+  document.getElementById('tp-lifts').innerHTML=renderLiftsPanel(targets);
+}
+
+function renderSessionsPanel(){
+  const sessions=(tracker.sessions||[]).slice().reverse();
+  return `<div class="session-form">
+    <div class="session-form-title">Log a Session</div>
+    <div class="session-form-grid">
+      <div>
+        <label class="edit-label">Session Type</label>
+        <select class="edit-input" id="sess-type" style="appearance:none;cursor:pointer">
+          <option>Strength — Monday</option>
+          <option>Strength — Wednesday</option>
+          <option>Accessory — Friday</option>
+          <option>Zwift — Zone 2</option>
+          <option>Zwift — FTP</option>
+          <option>HYROX</option>
+          <option>Running</option>
+          <option>Recovery</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div>
+        <label class="edit-label">How did it feel?</label>
+        <select class="edit-input" id="sess-feel" style="appearance:none;cursor:pointer">
+          <option value="great">💪 Great</option>
+          <option value="good">👍 Good</option>
+          <option value="ok">😐 OK</option>
+          <option value="tough">😤 Tough</option>
+        </select>
+      </div>
+    </div>
+    <label class="edit-label" style="margin-top:8px;display:block">Notes</label>
+    <textarea class="session-textarea" id="sess-notes" rows="3" placeholder="What did you do? Any PRs? How did it feel?"></textarea>
+    <button class="session-log-btn" onclick="logSession()">Log Session</button>
+  </div>
+  ${sessions.length?sessions.map((s,i)=>`
+    <div class="session-entry">
+      <div class="session-entry-hdr">
+        <div class="session-entry-title">${x(s.type)}</div>
+        <div style="display:flex;align-items:center;gap:10px">
+          <div class="session-entry-date">${s.date}</div>
+          <button class="session-del" onclick="deleteSession(${tracker.sessions.length-1-i})">✕</button>
+        </div>
+      </div>
+      <div class="session-entry-meta">
+        <span class="session-badge badge-feeling-${s.feel}">${s.feel==='great'?'💪 Great':s.feel==='good'?'👍 Good':s.feel==='ok'?'😐 OK':'😤 Tough'}</span>
+      </div>
+      ${s.notes?`<div class="session-entry-notes">${x(s.notes)}</div>`:''}
+    </div>`).join(''):'<div style="color:var(--muted);font-size:13px;text-align:center;padding:20px 0">No sessions logged yet</div>'}`;
+}
+
+function logSession(){
+  const type=document.getElementById('sess-type').value;
+  const feel=document.getElementById('sess-feel').value;
+  const notes=document.getElementById('sess-notes').value.trim();
+  if(!tracker.sessions) tracker.sessions=[];
+  tracker.sessions.push({type,feel,notes,date:new Date().toLocaleDateString('en-AU',{day:'numeric',month:'short',year:'numeric'})});
+  saveTracker();
+  document.getElementById('sess-notes').value='';
+  document.getElementById('tp-sessions').innerHTML=renderSessionsPanel();
+}
+
+function deleteSession(idx){
+  tracker.sessions.splice(idx,1);
+  saveTracker();
+  document.getElementById('tp-sessions').innerHTML=renderSessionsPanel();
+}
+
+function renderWeightPanel(){
+  const weights=(tracker.weights||[]);
+  const recent=weights.slice(-12);
+  const max=Math.max(...recent.map(w=>parseFloat(w.val)||0),1);
+  const min=Math.min(...recent.map(w=>parseFloat(w.val)||max),max);
+  const range=max-min||1;
+
+  return `<div style="background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px;margin-bottom:20px">
+    <div style="font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--accent);margin-bottom:14px">Log Body Weight</div>
+    <div class="weight-form">
+      <div>
+        <label class="edit-label">Weight</label>
+        <input class="lift-input" type="number" id="wt-val" placeholder="e.g. 82.5">
+      </div>
+      <div>
+        <label class="edit-label">Unit</label>
+        <select class="lift-input" id="wt-unit" style="appearance:none;cursor:pointer">
+          <option value="kg" ${profile.weightUnit==='kg'?'selected':''}>kg</option>
+          <option value="lbs" ${profile.weightUnit==='lbs'?'selected':''}>lbs</option>
+        </select>
+      </div>
+      <button class="lift-log-btn" onclick="logWeight()">Log</button>
+    </div>
+  </div>
+  ${recent.length>=2?`<div class="weight-chart">
+    <div class="weight-chart-title">Weight Over Time</div>
+    <div class="weight-bars">
+      ${recent.map(w=>{
+        const h=Math.max(10,Math.round(((parseFloat(w.val)-min)/range)*100));
+        return `<div class="weight-bar-wrap">
+          <div class="weight-bar-val">${w.val}</div>
+          <div class="weight-bar" style="height:${h}px"></div>
+          <div class="weight-bar-label">${w.date.split(' ').slice(0,2).join(' ')}</div>
+        </div>`;
+      }).join('')}
+    </div>
+  </div>`:''}
+  ${weights.length?`<div class="weight-history">${weights.slice().reverse().slice(0,15).map((w,i)=>{
+    const prev=weights[weights.length-2-i];
+    const delta=prev?parseFloat(w.val)-parseFloat(prev.val):0;
+    return `<div class="weight-entry">
+      <span class="weight-entry-date">${w.date}</span>
+      <div style="display:flex;align-items:center;gap:10px">
+        ${delta!==0?`<span class="weight-delta ${delta>0?'up':'down'}">${delta>0?'+':''}${delta.toFixed(1)}${w.unit}</span>`:''}
+        <span class="weight-entry-val">${w.val} ${w.unit}</span>
+        <button class="lift-del" onclick="deleteWeight(${weights.length-1-i})">✕</button>
+      </div>
+    </div>`;}).join('')}</div>`:'<div style="color:var(--muted);font-size:13px;text-align:center;padding:20px 0">No weight entries yet</div>'}`;
+}
+
+function logWeight(){
+  const val=document.getElementById('wt-val').value.trim();
+  const unit=document.getElementById('wt-unit').value;
+  if(!val) return;
+  if(!tracker.weights) tracker.weights=[];
+  tracker.weights.push({val,unit,date:new Date().toLocaleDateString('en-AU',{day:'numeric',month:'short',year:'numeric'})});
+  saveTracker();
+  document.getElementById('wt-val').value='';
+  document.getElementById('tp-bodyweight').innerHTML=renderWeightPanel();
+}
+
+function deleteWeight(idx){
+  tracker.weights.splice(idx,1);
+  saveTracker();
+  document.getElementById('tp-bodyweight').innerHTML=renderWeightPanel();
+}
+
+function renderRunsPanel(){
+  const runs=(tracker.runs||[]).slice().reverse();
+  return `<div class="run-entry-form">
+    <div style="font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--accent);margin-bottom:14px">Log a Run</div>
+    <div class="session-form-grid">
+      <div>
+        <label class="edit-label">Run Type</label>
+        <select class="edit-input" id="run-type" style="appearance:none;cursor:pointer">
+          <option>Tempo Run</option>
+          <option>Interval Session</option>
+          <option>5K Time Trial</option>
+          <option>10K Time Trial</option>
+          <option>Easy Run</option>
+          <option>Long Run</option>
+          <option>Race</option>
+        </select>
+      </div>
+      <div>
+        <label class="edit-label">Distance (km)</label>
+        <input class="edit-input" type="number" id="run-dist" placeholder="e.g. 5">
+      </div>
+      <div>
+        <label class="edit-label">Time (mm:ss)</label>
+        <input class="edit-input" id="run-time" placeholder="e.g. 24:30">
+      </div>
+      <div>
+        <label class="edit-label">Avg Pace (/km)</label>
+        <input class="edit-input" id="run-pace" placeholder="e.g. 4:54">
+      </div>
+    </div>
+    <label class="edit-label" style="margin-top:8px;display:block">Notes (optional)</label>
+    <textarea class="session-textarea" id="run-notes" rows="2" placeholder="How did it feel? Any splits?"></textarea>
+    <button class="session-log-btn" onclick="logRun()">Log Run</button>
+  </div>
+  ${runs.length?runs.map((r,i)=>`
+    <div class="run-history-item">
+      <div class="run-meta">
+        <div class="run-type">${x(r.type)}</div>
+        <div class="run-date">${r.date}</div>
+        ${r.notes?`<div style="font-size:12px;color:var(--muted);margin-top:4px">${x(r.notes)}</div>`:''}
+      </div>
+      <div class="run-stats">
+        ${r.dist?`<div class="run-stat"><div class="run-stat-val">${r.dist}</div><div class="run-stat-label">km</div></div>`:''}
+        ${r.time?`<div class="run-stat"><div class="run-stat-val">${x(r.time)}</div><div class="run-stat-label">time</div></div>`:''}
+        ${r.pace?`<div class="run-stat"><div class="run-stat-val">${x(r.pace)}</div><div class="run-stat-label">/km</div></div>`:''}
+        <button class="lift-del" onclick="deleteRun(${tracker.runs.length-1-i})" style="margin-left:8px">✕</button>
+      </div>
+    </div>`).join(''):'<div style="color:var(--muted);font-size:13px;text-align:center;padding:20px 0">No runs logged yet</div>'}`;
+}
+
+function logRun(){
+  const type=document.getElementById('run-type').value;
+  const dist=document.getElementById('run-dist').value.trim();
+  const time=document.getElementById('run-time').value.trim();
+  const pace=document.getElementById('run-pace').value.trim();
+  const notes=document.getElementById('run-notes').value.trim();
+  if(!dist&&!time) return;
+  if(!tracker.runs) tracker.runs=[];
+  tracker.runs.push({type,dist,time,pace,notes,date:new Date().toLocaleDateString('en-AU',{day:'numeric',month:'short',year:'numeric'})});
+  saveTracker();
+  document.getElementById('run-dist').value='';
+  document.getElementById('run-time').value='';
+  document.getElementById('run-pace').value='';
+  document.getElementById('run-notes').value='';
+  document.getElementById('tp-running').innerHTML=renderRunsPanel();
+}
+
+function deleteRun(idx){
+  tracker.runs.splice(idx,1);
+  saveTracker();
+  document.getElementById('tp-running').innerHTML=renderRunsPanel();
+}
+
 // ── INIT ──────────────────────────────────────────────────────────
 (function(){
+  loadTracker();
   try{
     const sp=localStorage.getItem(SK),sprog=localStorage.getItem(SK2);
-    if(sp&&sprog){profile=JSON.parse(sp);programme=JSON.parse(sprog);document.getElementById('onboarding').classList.add('hidden');document.getElementById('app').classList.add('visible');renderApp();return;}
+    if(sp&&sprog){
+      profile=JSON.parse(sp);
+      programme=JSON.parse(sprog);
+      document.getElementById('onboarding').classList.add('hidden');
+      document.getElementById('app').classList.add('visible');
+      renderApp();
+      renderTracker();
+      return;
+    }
   }catch(e){}
   obShowStep(0);
 })();
